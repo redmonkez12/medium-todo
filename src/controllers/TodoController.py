@@ -1,5 +1,5 @@
 from fastapi import Body, Response, status, HTTPException, Depends, Query, APIRouter
-from typing import List
+from typing import List, Union
 from typing_extensions import Annotated
 from sqlalchemy.exc import NoResultFound
 
@@ -20,8 +20,8 @@ todo_router = APIRouter(
 @todo_router.get("/", response_model=List[Todo])
 async def get_todos(*,
                     todo_service: TodoService = Depends(get_todo_service),
-                    offset: Annotated[int | None, Query()] = 0,
-                    limit: Annotated[int | None, Query()] = 10,
+                    offset: Annotated[Union[int, None], Query()] = 0,
+                    limit: Annotated[Union[int, None], Query()] = 10,
                     current_user: GetByUsernameResponse = Depends(get_current_user),
                     ):
     print(current_user)  # @TODO We will use this later
