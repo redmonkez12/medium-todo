@@ -12,8 +12,10 @@ config = dotenv_values("./.env")
 username = settings.DB_USERNAME
 password = settings.DB_PASSWORD
 dbname = settings.DB_NAME
+db_host = settings.DB_HOST
+db_port = settings.DB_PORT
 
-SQLALCHEMY_DATABASE_URL = f"postgresql+asyncpg://{username}:{password}@localhost:5432/{dbname}"
+SQLALCHEMY_DATABASE_URL = f"postgresql+asyncpg://{username}:{password}@{db_host}:{db_port}/{dbname}"
 engine = create_async_engine(SQLALCHEMY_DATABASE_URL, echo=True, future=True)
 
 
