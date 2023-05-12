@@ -1,4 +1,5 @@
 import datetime
+from typing import List
 
 from sqlmodel import SQLModel, Field, Relationship
 
@@ -16,4 +17,4 @@ class User(SQLModel, table=True):
     birthdate: datetime.date = Field(nullable=False)
     created_at: str = Field(sa_column=sa.Column(sa.DateTime(timezone=True), default=datetime.datetime.now))
 
-    passwords: list["UserPassword"] = Relationship(back_populates="user", sa_relationship_kwargs={'lazy': 'joined'})
+    passwords: List["UserPassword"] = Relationship(back_populates="user", sa_relationship_kwargs={'lazy': 'joined'})

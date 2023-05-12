@@ -1,5 +1,5 @@
 from fastapi import Body, Response, status, HTTPException, Depends, Query, APIRouter
-from typing import Annotated
+from typing import Annotated, List
 from sqlalchemy.exc import NoResultFound
 
 from src.auth.user import get_current_user
@@ -16,7 +16,7 @@ todo_router = APIRouter(
 )
 
 
-@todo_router.get("/", response_model=list[Todo])
+@todo_router.get("/", response_model=List[Todo])
 async def get_todos(*,
                     todo_service: TodoService = Depends(get_todo_service),
                     offset: Annotated[int | None, Query()] = 0,

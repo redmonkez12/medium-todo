@@ -1,4 +1,5 @@
 from sqlmodel import Session, select, delete, update
+from typing import List
 
 from src.models.Todo import Todo
 from src.requests.CreateTodoRequest import CreateTodoRequest
@@ -26,7 +27,7 @@ class TodoService:
         result = await self.session.execute(query)
         return result.scalars().one()
 
-    async def get_todos(self, offset: int, limit: int) -> list[Todo]:
+    async def get_todos(self, offset: int, limit: int) -> List[Todo]:
         query = (
             select(Todo)
             .offset(offset)
