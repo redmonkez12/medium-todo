@@ -1,0 +1,2 @@
+class UsernameDuplicationException(Exception):
+    pass
