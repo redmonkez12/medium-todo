@@ -3,15 +3,15 @@ from datetime import datetime
 from sqlmodel import Session, select
 from sqlalchemy import exc
 
-from auth.password import get_password_hash, verify_password
-from exceptions.EmailDuplicationException import EmailDuplicationException
-from exceptions.InvalidData import InvalidData
-from exceptions.UserNotFoundException import UserNotFoundException
-from exceptions.UsernameDuplicationException import UsernameDuplicationException
-from models.User import User
-from models.UserPassword import UserPassword
-from requests.CreateUserRequest import CreateUserRequest
-from requests.LoginRequest import LoginRequest
+from src.auth.password import get_password_hash, verify_password
+from src.exceptions.EmailDuplicationException import EmailDuplicationException
+from src.exceptions.InvalidData import InvalidData
+from src.exceptions.UserNotFoundException import UserNotFoundException
+from src.exceptions.UsernameDuplicationException import UsernameDuplicationException
+from src.models.User import User
+from src.models.UserPassword import UserPassword
+from src.requests.CreateUserRequest import CreateUserRequest
+from src.requests.LoginRequest import LoginRequest
 
 
 class UserService:

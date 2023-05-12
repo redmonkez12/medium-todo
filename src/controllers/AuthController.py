@@ -3,16 +3,16 @@ import json
 from fastapi import Body, Response, status, HTTPException, Depends, APIRouter
 from sqlalchemy.exc import NoResultFound
 
-from auth.token import create_access_token
-from deps import get_user_service
-from exceptions.EmailDuplicationException import EmailDuplicationException
-from exceptions.InvalidData import InvalidData
-from exceptions.UserNotFoundException import UserNotFoundException
-from exceptions.UsernameDuplicationException import UsernameDuplicationException
-from requests.CreateUserRequest import CreateUserRequest
-from requests.LoginRequest import LoginRequest
+from src.auth.token import create_access_token
+from src.deps import get_user_service
+from src.exceptions.EmailDuplicationException import EmailDuplicationException
+from src.exceptions.InvalidData import InvalidData
+from src.exceptions.UserNotFoundException import UserNotFoundException
+from src.exceptions.UsernameDuplicationException import UsernameDuplicationException
+from src.requests.CreateUserRequest import CreateUserRequest
+from src.requests.LoginRequest import LoginRequest
 
-from services.UserService import UserService
+from src.services.UserService import UserService
 
 auth_router = APIRouter(
     prefix="/auth",

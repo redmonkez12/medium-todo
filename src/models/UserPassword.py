@@ -4,7 +4,7 @@ from sqlmodel import SQLModel, Field, Relationship
 
 import sqlalchemy as sa
 
-from models.User import User
+from src.models.User import User
 
 
 class UserPassword(SQLModel, table=True):

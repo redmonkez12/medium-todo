@@ -1,8 +1,8 @@
 from sqlmodel import Session, select, delete, update
 
-from models.Todo import Todo
-from requests import CreateTodoRequest
-from requests.UpdateTodoRequest import UpdateTodoRequest
+from src.models.Todo import Todo
+from src.requests.CreateTodoRequest import CreateTodoRequest
+from src.requests.UpdateTodoRequest import UpdateTodoRequest
 
 
 class TodoService:

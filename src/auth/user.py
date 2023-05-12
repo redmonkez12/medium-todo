@@ -3,9 +3,9 @@ from fastapi import Depends, status, HTTPException
 from jose import JWTError, jwt
 from fastapi.security import OAuth2PasswordBearer
 
-from deps import get_user_service
-from services.UserService import UserService
-from auth.token import SECRET_KEY, ALGORITHM
+from src.deps import get_user_service
+from src.services.UserService import UserService
+from src.auth.token import SECRET_KEY, ALGORITHM
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

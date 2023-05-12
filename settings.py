@@ -11,4 +11,4 @@ class Settings(BaseSettings):
 
 # specify .env file location as Config attribute
     class Config:
-        env_file = ".env-test"
+        env_file = ".env"

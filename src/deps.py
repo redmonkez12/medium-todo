@@ -1,6 +1,6 @@
-from services.TodoService import TodoService
-from database import async_session
-from services.UserService import UserService
+from src.database import async_session
+from src.services.TodoService import TodoService
+from src.services.UserService import UserService
 
 
 async def get_todo_service():

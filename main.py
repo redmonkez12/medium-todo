@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from controllers.AuthController import auth_router
-from controllers.TodoController import todo_router
-from database import init_db
+from src.controllers.AuthController import auth_router
+from src.controllers.TodoController import todo_router
+from src.database import init_db
 
 
 app = FastAPI()

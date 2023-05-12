@@ -8,7 +8,7 @@ from settings import Settings
 
 settings = Settings()
 
-config = dotenv_values("./.env")
+config = dotenv_values("../.env")
 username = settings.DB_USERNAME
 password = settings.DB_PASSWORD
 dbname = settings.DB_NAME

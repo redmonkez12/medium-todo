@@ -2,13 +2,13 @@ from fastapi import Body, Response, status, HTTPException, Depends, Query, APIRo
 from typing import Annotated
 from sqlalchemy.exc import NoResultFound
 
-from auth.user import get_current_user
-from deps import get_todo_service
-from models.Todo import Todo
-from requests.CreateTodoRequest import CreateTodoRequest
-from requests.UpdateTodoRequest import UpdateTodoRequest
-from responses.GetByUsernameResponse import GetByUsernameResponse
-from services.TodoService import TodoService
+from src.auth.user import get_current_user
+from src.deps import get_todo_service
+from src.models.Todo import Todo
+from src.requests.CreateTodoRequest import CreateTodoRequest
+from src.requests.UpdateTodoRequest import UpdateTodoRequest
+from src.responses.GetByUsernameResponse import GetByUsernameResponse
+from src.services.TodoService import TodoService
 
 todo_router = APIRouter(
     prefix="/todos",
