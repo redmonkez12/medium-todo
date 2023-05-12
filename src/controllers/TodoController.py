@@ -1,5 +1,6 @@
 from fastapi import Body, Response, status, HTTPException, Depends, Query, APIRouter
-from typing import Annotated, List
+from typing import List
+from typing_extensions import Annotated
 from sqlalchemy.exc import NoResultFound
 
 from src.auth.user import get_current_user
