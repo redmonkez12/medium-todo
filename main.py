@@ -8,6 +8,11 @@ from database import init_db
 app = FastAPI()
 
 
+@app.get("/")
+async def index():
+    return "Api is running"
+
+
 @app.on_event("startup")
 async def on_startup():
     await init_db()
